@@ -1,0 +1,3 @@
+<div class="phx-hero">
+    <h2>Help Topic: <%= @messenger %></h2>
+</div>

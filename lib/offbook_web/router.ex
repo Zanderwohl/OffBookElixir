@@ -17,7 +17,9 @@ defmodule OffbookWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-	resources "/departments", DepartmentController
+    get "/help", HelpController, :index
+    get "/help/:messenger", HelpController, :topic
+	  resources "/departments", DepartmentController
   end
 
   # Other scopes may use custom stacks.
