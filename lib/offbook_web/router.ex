@@ -1,6 +1,8 @@
 defmodule OffbookWeb.Router do
   use OffbookWeb, :router
   use Pow.Phoenix.Router
+  use Pow.Extension.Phoenix.Router,
+    extensions: [PowResetPassword, PowEmailConfirmation, PowPersistentSession, PowInvitation]
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -15,10 +17,11 @@ defmodule OffbookWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/" do
+  scope "/" do # configuration is assigned to conn.private[:pow_config]
     pipe_through :browser
 
     pow_routes()
+    pow_extension_routes()
   end
 
   scope "/", OffbookWeb do

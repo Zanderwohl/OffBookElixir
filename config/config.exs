@@ -32,4 +32,8 @@ import_config "#{Mix.env()}.exs"
 
 config :offbook, :pow,
   user: Offbook.Users.User,
-  repo: Offbook.Repo
+  repo: Offbook.Repo,
+  extensions: [PowResetPassword, PowEmailConfirmation, PowPersistentSession, PowInvitation],
+  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
+  mailer_backend: OffbookWeb.Pow.Mailer,
+  web_mailer_module: OffbookWeb

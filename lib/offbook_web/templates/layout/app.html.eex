@@ -39,7 +39,7 @@
           </div>
           <div class="right">
             <ul>
-              <li><a>Log out</a></li>
+              <li><a href="/registration/new/">Register</a><a href="/session/new/">Sign In</a></li>
               <span class="qotd">
                 <span class="qotd-quote"><li>"All the world's a stage."</li></span>
                 <span class="qotd-person"><li>-William Shakespeare</li></span>

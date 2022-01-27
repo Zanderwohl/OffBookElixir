@@ -52,6 +52,7 @@ defmodule OffbookWeb.Endpoint do
   plug Plug.Session, @session_options
 
   plug Pow.Plug.Session, otp_app: :offbook
+  plug PowPersistentSession.Plug.Cookie
 
   plug OffbookWeb.Router
 end
