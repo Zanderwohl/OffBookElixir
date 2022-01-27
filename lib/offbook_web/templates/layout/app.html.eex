@@ -37,12 +37,15 @@
               </nav>
             </div>
           </div>
-          <div class="right qotd">
+          <div class="right">
             <ul>
-              <span class="qotd-quote"><li>"All the world's a stage."</li></span>
-              <span class="qotd-person"><li>-William Shakespeare</li></span>
-              <span class="qotd-source"><li>As You Like It</li></span>
-            </ul>
+              <li><a>Log out</a></li>
+              <span class="qotd">
+                <span class="qotd-quote"><li>"All the world's a stage."</li></span>
+                <span class="qotd-person"><li>-William Shakespeare</li></span>
+                <span class="qotd-source"><li>As You Like It</li></span>
+              </span>
+              </ul>
           </div>
         </nav>
       </section>
