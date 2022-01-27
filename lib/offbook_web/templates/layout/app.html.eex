@@ -10,25 +10,76 @@
   </head>
   <body>
     <header>
-      <section class="container">
-        <nav role="navigation">
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-            <% end %>
-          </ul>
+      <section>
+        <nav role="header">
+          <div class="left">
+            <ul>
+              <li>Department: Playwrongs</li>
+              <li>Production: Drop Dead!</li>
+              <li>Event: Writing</li>
+              <li><a href="/context">Change Context</a></li>
+            </ul>
+          </div>
+          <div class="center">
+            <div class="left">
+              <a href="/" class="phx-logo">
+                <img src="<%= Routes.static_path(@conn, "/images/banner_shorter.png") %>" alt="Home"/>
+              </a>
+            </div>
+            <div class="navigation right">
+              <nav role="navigation">
+                <ul>
+                  <li><a href="/events">Events</a></li>
+                  <li><a href="/people">People</a></li>
+                  <li><a href="/people">Reports</a></li>
+                  <li><a href="/utilities">Utilites</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="right qotd">
+            <ul>
+              <span class="qotd-quote"><li>"All the world's a stage."</li></span>
+              <span class="qotd-person"><li>-William Shakespeare</li></span>
+              <span class="qotd-source"><li>As You Like It</li></span>
+            </ul>
+          </div>
         </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
-        </a>
       </section>
     </header>
     <main role="main" class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
       <%= @inner_content %>
-      <p>Locale: <%= @locale %></p>
     </main>
+    <footer>
+      <section>
+        <nav role="footer">
+          <div class="left">
+            <ul>
+              <li>Locale: <%= @locale %></li>
+              <li><a href="https://hexdocs.pm/phoenix/overview.html">Phoenix Docs</a></li>
+              <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
+              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="center">
+            <ul>
+              <li>OffBook</li>
+              <li>Version Alpha 0.1</li>
+              <li>Ⓒ2022 Alexander Lowry</li>
+            </ul>
+          </div>
+          <div class="right">
+            <ul>
+              <li><a href="https://github.com/Zanderwohl">GitHub</a></li>
+              <li><a href="/reportproblem/">Report a Problem</a></li>
+              <li><a href="/help/">Help</a></li>
+            </ul>
+          </div>
+        </nav>
+      </section>
+    </footer>
   </body>
 </html>

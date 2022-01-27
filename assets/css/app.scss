@@ -1,5 +1,6 @@
 /* This file is for your main application css. */
 @import "./phoenix.css";
+@import "./colors.scss";
 
 /* Alerts and form errors */
 .alert {
@@ -28,4 +29,154 @@
 }
 .alert:empty {
   display: none;
+}
+
+.navigation {
+  text-align: right;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fdfdfd;
+  border-top: 1px solid #eaeaea;
+  padding-bottom: 1rem;
+  padding-top: 2rem;
+  color: $gray-mid;
+}
+
+footer section nav {
+  display: flex;
+}
+
+footer nav ul,
+footer nav li {
+  margin: 0;
+  //padding: 0;
+  display: block;
+  white-space: nowrap;
+}
+footer nav ul {
+  margin: 1rem;
+  margin-top: 0;
+}
+footer nav a {
+  display: block;
+}
+
+header {
+  //position: fixed;
+  //bottom: 0;
+  //left: 0;
+  width: 100%;
+  background: #fdfdfd;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 1rem;
+  padding-top: 2rem;
+  color: $gray-mid;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+header section {
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header section nav {
+  display: flex;
+}
+
+header nav ul,
+header nav li {
+  margin: 0;
+  padding: 0;
+  display: block;
+  white-space: nowrap;
+}
+header nav ul {
+  margin: 1rem;
+  margin-top: 0;
+}
+header nav a {
+  display: block;
+}
+
+.left {
+  text-align: left;
+  //border: 1px dashed red;
+  flex: 1;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.center {
+  text-align: center;
+  //border: 1px dashed red;
+  flex: 1;
+  justify-content: center;
+  display: flex;
+}
+
+.right {
+  text-align: right;
+  //border: 1px dashed red;
+  flex: 1;
+  justify-content: flex-end;
+  display: flex;
+  //padding-right: 1rem;
+}
+
+.qotd ul span li {
+  list-style-type: none; // yuck
+  margin: 0;
+  padding: 0;
+}
+
+.quotd-quote {
+
+}
+
+.qotd-person {
+  font-style: italic;
+}
+
+.qotd-source {
+font-style: italic;
+}
+
+@media (max-width: 40.0rem) { /* Small devices (landscape phones, 576px and up) */
+  footer section {
+    flex-direction: row;
+  }
+  footer nav ul {
+    margin: 1rem;
+  }
+
+  .left {
+    text-align: center;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .right {
+    text-align: center;
+  }
+
+  header section {
+    flex-direction: row;
+  }
+  header nav ul {
+    margin: 1rem;
+  }
+
+  .phx-logo {
+    flex-basis: 527px;
+    margin: 2rem 1rem;
+  }
 }
