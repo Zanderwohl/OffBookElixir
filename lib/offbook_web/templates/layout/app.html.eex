@@ -39,7 +39,17 @@
           </div>
           <div class="right">
             <ul>
-              <li><a href="/registration/new/">Register</a><a href="/session/new/">Sign In</a></li>
+              <%= if Pow.Plug.current_user(@conn) do %>
+              <li>
+                <%= link "#{@current_user.email}", to: Routes.pow_registration_path(@conn, :edit) %>
+              </li>
+              <li>
+                <%= link "Sign Out", to: Routes.pow_session_path(@conn, :delete), method: :delete %>
+              </li>
+            <% else %>
+              <li><%= link "Sign In", to: Routes.pow_session_path(@conn, :new) %></li>
+              <li><%= link "Register", to: Routes.pow_registration_path(@conn, :new) %></li>
+            <% end %>
               <span class="qotd">
                 <span class="qotd-quote"><li>"All the world's a stage."</li></span>
                 <span class="qotd-person"><li>-William Shakespeare</li></span>
